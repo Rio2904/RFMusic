@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible"content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RF Music</title>
+    <link rel="icon" type="image/png" href="/rfmusic_img/Favicon.png"/>
+    <style type="text/css" media="all">
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      background-color: #121212;
+      color: white;
+      font-family:  'Sans-Serif';
+      padding-bottom: 150px;
+    }
+    
+    /* Navbar */
+    .navbar {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar .news {
+      margin-left: 15px;
+    }
+    .navbar .icon {
+      width: 40%;
+      display: flex;
+      justify-content: space-around;
+    }
+    .navbar .icon img {
+      width: 100%;
+    }
+    .navbar .icon div {
+      width: 30px;
+    }
+    /* End Navbar */
+     
+     
+     /* Box Song */
+     .container-box-song {
+      margin-top: 2rem;
+      display: flex;
+      gap: 15px;
+      justify-content: start;
+      padding-left: 15px;
+      padding-right: 15px;
+      overflow: auto;
+    }
+    .container-box-song::-webkit-scrollbar { display: none; }
+    .container-box-song .box {
+      flex: 1;
+      min-width: 160px;
+      max-width: 160px;
+      font-family: Sans-Serif;
+      font-size: 0.8rem;
+      color: #a7a7a7;
+      text-align: center;
+    }
+    .container-box-song .box:hover .thumb, .box:hover .judul {
+      transform: scale(1.02);
+    }
+    .container-box-song .box .thumb img{
+      width: 100%;
+      height: 100%;
+    }
+    .container-box-song .box .thumb {
+      height: 160px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .container-box-song .box .judul {
+      margin-top: 10px;
+    }
+    /* End box Song */
+
+    
+    /* Audio Player */
+    .container-audio-player {
+      position: fixed;
+      width: 50%;
+      bottom: 10px;
+      padding-bottom: 30px;
+      background-color: rgba(18,18,18, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .audio-player {
+        margin: 0 auto;
+        display: flex;
+        margin-top: 2rem;
+        width: 90%;
+        background-color: #3C3837;
+        border-radius: 10px;
+      }
+
+    .detail {
+      display: flex;
+      flex: 2;
+      gap: 10px;
+      align-items: center;
+      padding: 10px;
+      color: white;
+    }
+
+    .detail img {
+      width: 55px;
+      border-radius: 5px;
+    }
+  
+    .detail .title .judulAP {
+      font-weight: bold;
+    }
+    .detail .title .artisAP {
+      color: #ddd;
+    }
+    .control {
+      flex: 1.5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-right: 10px;
+    }
+    .control img {
+      width: 35px;
+      height: 35px;
+    }
+   .title-song-audio {
+     text-align: center;
+   }
+   
+   
+   .time {
+     width: 90%;
+     display: flex;
+     justify-content: space-between;
+     font-size: 13px;
+   }
+   input#seekslider{
+    -webkit-appearance: none;
+     height: 5px;
+     border-radius: 2px;
+     width: 90%;
+     margin-top: 5px;
+   }
+   .title-box {
+     margin-top: 2rem;
+     margin-left: 15px;
+   }
+   
+   /* End Audio Player */
+   
+   
+   
+   @media (min-width: 481px)  { /* CSS */ 
+    .container-audio-player {
+     transform: translate(50%);
+    }
+   }
+   
+   
+   
+   @media (min-width: 320px) and (max-width: 480px) { 
+  /* Navbar */
+    .navbar {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar .news {
+      margin-left: 15px;
+    }
+    .navbar .icon {
+      width: 40%;
+      display: flex;
+      justify-content: space-around;
+    }
+    .navbar .icon img {
+      width: 100%;
+    }
+    .navbar .icon div {
+      width: 30px;
+    }
+  /* End Navbar */
+     
+   
+  /* Box Song */  
+     .container-box-song {
+      margin-top: 1rem;
+      display: flex;
+      gap: 15px;
+      justify-content: start;
+      padding-left: 15px;
+      padding-right: 15px;
+      overflow: auto;
+    }
+    .container-box-song::-webkit-scrollbar { display: none; }
+    .container-box-song .box {
+      flex: 1;
+      min-width: 160px;
+      max-width: 160px;
+      font-family: Sans-Serif;
+      font-size: 0.8rem;
+      color: #a7a7a7;
+      text-align: center;
+    }
+    .container-box-song .box:hover .thumb, .box:hover .judul {
+      transform: scale(1.02);
+    }
+    .container-box-song .box .thumb img{
+      width: 100%;
+      height: 100%;
+    }
+    .container-box-song .box .thumb {
+      height: 160px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .container-box-song .box .judul {
+      margin-top: 10px;
+    }
+  /* End Box Song */
+   
+   
+  /* Audio Player Control */  
+     .container-audio-player {
+      position: fixed;
+      width: 100%;
+      bottom: 10px;
+      padding-bottom: 30px;
+      background-color: rgba(18,18,18, 0.5);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .audio-player {
+        margin: 0 auto;
+        display: flex;
+        margin-top: 2rem;
+        width: 90%;
+        background-color: #3C3837;
+        border-radius: 10px;
+      }
+
+    .detail {
+      display: flex;
+      flex: 2;
+      gap: 10px;
+      align-items: center;
+      padding: 10px;
+      color: white;
+    }
+
+    .detail img {
+      width: 55px;
+      border-radius: 5px;
+    }
+  
+    .detail .title .judulAP {
+      font-weight: bold;
+    }
+    .detail .title .artisAP {
+      color: #ddd;
+    }
+    .control {
+      flex: 1.5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-right: 10px;
+    }
+    .control img {
+      width: 35px;
+      height: 35px;
+    }
+   .title-song-audio {
+     text-align: center;
+   }
+   
+   .time {
+     width: 90%;
+     display: flex;
+     justify-content: space-between;
+     font-size: 13px;
+   }
+   input#seekslider{
+    -webkit-appearance: none;
+     height: 5px;
+     border-radius: 2px;
+     width: 90%;
+     margin-top: 5px;
+   }
+   
+   /* End Audio Player Control */
+   .title-box {
+     margin-top: 2rem;
+     margin-left: 15px;
+   }
+   
+}
+
+    </style>
+  </head>
+  <body>
+  
+      <!-- Navbar -->
+    <nav class="navbar">
+      <!-- Title -->
+      <h1 class="news">RF Music</h1>
+      <!-- Icon  -->
+      <div class="icon">
+        <div class="facebook">
+          <a href="https://www.facebook.com/adam.munthe.756?mibextid=ZbWKwL"><img src="assets/rfmusic_img/facebook-icon.png" alt="notif" /></a>
+         </div>
+        <div class="whatsapp">
+          <a href="https://wa.me/+6283183628845"><img src="assets/rfmusic_img/whatsapp-icon.png" alt="history" /></a></div>
+        <div class="instagram">
+         <a href="https://www.instagram.com/rio_fernando_13/"><img src="assets/rfmusic_img/instagram-icon.png" alt="Sett" /></a></div>
+      </div>
+    </nav>
+    <!-- End Navbar -->
+    
+    <!-- song 1 -->
+    <div class="container-box-song"></div>
+    
+    
+    <!-- Song 2 -->
+    <div class="title-box">
+      <h2>Fresh!</h2></div>
+    <div class="container-box-song"></div>
+    
+    <!-- Song 3 -->
+    <div class="title-box">
+      <h2>Mix Santai</h2></div>
+    <div class="container-box-song"></div>
+
+    
+    
+    <!-- Audio Player -->
+ <div class="container-audio-player">
+   <!-- Audio player -->
+    <div class="audio-player">
+      <div class="detail">
+         <img class="thumb-audio-player"src="assets/rfmusic_img/SpeedOfSound.png" alt="" />
+         <div class="title">
+           <p class="judulAP">...</p>
+           <p class="artisAP">--</p>
+         </div>
+    </div>
+    <div class="control">
+        <img class="prev" src="assets/rfmusic_img/prev.png" alt="" />
+        <img class="play-pause" src="assets/rfmusic_img/paused.png" alt="" />
+        <img class="next" src="assets/rfmusic_img/next.png" alt="" />
+      </div>
+    </div>
+    <!-- Curr durr time -->
+    <div class="time">
+      <div class="currTime">00:00</div>
+      <div class="duration">00:00</div>
+    </div>
+    <!-- Seek Slider -->
+    <input type="range" name="" id="seekslider" value="0" min="0" max="100" />
+  </div>
+    
+  
+    <!-- Audio Player No display-->
+    <div class="audio-player-none">
+    <audio id="my-audio" preload="metadata">
+       <source src="" type="audio/mpeg"> 
+    </audio>
+   
+   
+   
+   
+   
+   
+  <!-- Script -->
+    <script src="script.js" type="text/javascript" charset="utf-8"></script>
+  </body>
+</html>
