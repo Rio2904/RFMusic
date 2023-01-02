@@ -37,7 +37,7 @@
         judul : "What You Know",
         artis : "Two Door Cinema Club",
         img : "assets/rfmusic_img/WhatYouKnow.jpg",
-        urlSong : "assets/rfmusic_list_song/Kodaline - All I Want.mp3"
+        urlSong : "assets/rfmusic_list_song/TWO-DOOR-CINEMA-CLUB-WHAT-YOU-KNOW_YXwYJyrKK5A.mp3"
       },
       {
         judul : "Genghis Khan",
